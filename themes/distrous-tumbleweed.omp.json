@@ -10,7 +10,7 @@
           "foreground": "#FFFFFF",
           "leading_diamond": "",
           "style": "diamond",
-          "template": "<b>{{ if or .Env.DISTROBOX_ENTER_PATH .Env.CONTAINER_ID }} {{ end }}  TBLW </b>",
+          "template": "<b>{{ if or .Env.DISTROBOX_ENTER_PATH .Env.CONTAINER_ID }} {{ end }}  TBLW </b>",
           "type": "os"
         },
         {

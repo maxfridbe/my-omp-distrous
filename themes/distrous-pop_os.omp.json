@@ -10,7 +10,7 @@
           "foreground": "#000000",
           "leading_diamond": "",
           "style": "diamond",
-          "template": "<b>{{ if or .Env.DISTROBOX_ENTER_PATH .Env.CONTAINER_ID }} {{ end }}  P!OS </b>",
+          "template": "<b>{{ if or .Env.DISTROBOX_ENTER_PATH .Env.CONTAINER_ID }} {{ end }}  P!OS </b>",
           "type": "os"
         },
         {
