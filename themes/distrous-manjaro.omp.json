@@ -8,39 +8,39 @@
         {
           "background": "#31BD57",
           "foreground": "#000000",
-          "leading_diamond": "\ue0b2",
+          "leading_diamond": "",
           "style": "diamond",
-          "template": "<b>  MANJ </b>",
+          "template": "<b>{{ if or .Env.DISTROBOX_ENTER_PATH .Env.CONTAINER_ID }} {{ end }}  MANJ </b>",
           "type": "os"
         },
         {
           "background": "#7CDC96",
           "foreground": "#000000",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "style": "powerline",
-          "template": "<b> \uf489 {{ .Name }} </b>",
+          "template": "<b>  {{ .Name }} </b>",
           "type": "shell"
         },
         {
           "background": "#258C41",
           "foreground": "#FFFFFF",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "style": "powerline",
-          "template": "<b> \uf09c root </b>",
+          "template": "<b>  root </b>",
           "type": "root"
         },
         {
           "type": "cmake",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "foreground": "#E8EAEE",
           "background": "#1E9748",
-          "template": "<b> \ue61e \ue61d cmake {{ .Full }} </b>"
+          "template": "<b>   cmake {{ .Full }} </b>"
         },
         {
           "type": "python",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "properties": {
             "display_mode": "context"
           },
@@ -52,28 +52,28 @@
           "background_templates": [
             "{{ if .Venv}}#356C9C{{ end }}"
           ],
-          "template": " <b>\ue73c {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}</b> "
+          "template": " <b> {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}</b> "
         },
         {
           "type": "go",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "foreground": "#000000",
           "background": "#7FD5EA",
-          "template": "<b> \u202d\ue626 {{ .Full }} </b>"
+          "template": "<b> ‭ {{ .Full }} </b>"
         },
         {
           "type": "rust",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "foreground": "#e2f3ff",
           "background": "#684e3d",
-          "template": " \ue7a8 {{ .Full }} "
+          "template": "  {{ .Full }} "
         },
         {
           "background": "#D53010",
           "foreground": "#FFFFFF",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "properties": {
             "branch_icon": " ",
             "fetch_stash_count": true,
@@ -82,7 +82,7 @@
             "fetch_worktree_count": true
           },
           "style": "powerline",
-          "template": "<b> {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#CAEBE1> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} </b>",
+          "template": "<b> {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#CAEBE1>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} </b>",
           "type": "git"
         }
       ],
@@ -100,14 +100,14 @@
           "foreground_templates": [
             "{{ if gt .Code 0 }}#FFFFFF{{ end }}"
           ],
-          "leading_diamond": "\ue0b2",
+          "leading_diamond": "",
           "properties": {
             "always_enabled": true
           },
           "style": "diamond",
-          "template": "{{ if gt .Code 0 }}\uf00d{{ else }}\uf00c{{ end }}",
+          "template": "{{ if gt .Code 0 }}{{ else }}{{ end }}",
           "type": "status",
-          "trailing_diamond": "\ue0b0"
+          "trailing_diamond": ""
         },
         {
           "background": "#575656",
@@ -117,8 +117,8 @@
             "threshold": 0
           },
           "style": "diamond",
-          "template": " \uf252 {{ .FormattedMs }}",
-          "trailing_diamond": "\ue0b0",
+          "template": "  {{ .FormattedMs }}",
+          "trailing_diamond": "",
           "type": "executiontime"
         }
       ],
@@ -131,13 +131,13 @@
         {
           "foreground": "",
           "style": "plain",
-          "template": "\u256d\u2500",
+          "template": "╭─",
           "type": "text"
         },
         {
           "foreground": "#C8D151",
           "properties": {
-            "time_format": " <#D19951>\uf017 03:04:05 PM</> <#C0DC7C>|</> \uf073 06/01/02 \uf104 January \uf142 Wednesday \uf105"
+            "time_format": " <#D19951> 03:04:05 PM</> <#C0DC7C>|</>  06/01/02  January  Wednesday "
           },
           "style": "plain",
           "template": "{{ .CurrentDate | date .Format }}",
@@ -154,12 +154,12 @@
         {
           "foreground": "",
           "style": "plain",
-          "template": "\u2502",
+          "template": "│",
           "type": "text"
         },
         {
           "style": "plain",
-          "template": "  <#51D173>\uf007 {{ .UserName }}</> <#C0DC7C>|</> <#51D1C9>\udb80\udf79 {{ .HostName }}</>",
+          "template": "  <#51D173> {{ .UserName }}</> <#C0DC7C>|</> <#51D1C9>󰍹 {{ .HostName }}</>",
           "type": "session"
         }
       ]
@@ -172,29 +172,29 @@
         {
           "foreground": "",
           "style": "plain",
-          "template": "\u2502",
+          "template": "│",
           "type": "text"
         },
         {
           "leading_diamond": "",
           "properties": {
-            "folder_icon": " \uf07c ",
-            "folder_separator_icon": " <>\uf061</> ",
-            "home_icon": "\uf015",
+            "folder_icon": "  ",
+            "folder_separator_icon": " <></> ",
+            "home_icon": "",
             "style": "agnoster_short",
             "max_depth": 4,
             "right_format": "<u><b>%s</b></u>",
             "mapped_locations": {
-              "~/Videos": "\uf015 <>\uf061</> \uf03d",
-              "~/Desktop": "\uf015 <>\uf061</> \uf108",
-              "~/Documents": "\uf015 <>\uf061</> \udb80\ude19",
-              "~/Downloads": "\uf015 <>\uf061</> \uf019",
-              "~/Pictures/": "\uf015 <>\uf061</> \uf03e",
-              "~/Music": "\uf015 <>\uf061</> \uf001"
+              "~/Videos": " <></> ",
+              "~/Desktop": " <></> ",
+              "~/Documents": " <></> 󰈙",
+              "~/Downloads": " <></> ",
+              "~/Pictures/": " <></> ",
+              "~/Music": " <></> "
             }
           },
           "style": "diamond",
-          "template": "  <#8ACE9C>{{ if not .Writable }}<#CE8A8A>\uf09c {{ end }}{{ if .RootDir }}\ue216{{ else }}{{ .Path }}{{ end }}</> ",
+          "template": "  <#8ACE9C>{{ if not .Writable }}<#CE8A8A> {{ end }}{{ if .RootDir }}{{ else }}{{ .Path }}{{ end }}</> ",
           "type": "path"
         }
       ]
@@ -206,7 +206,7 @@
         {
           "foreground": "",
           "style": "plain",
-          "template": "\u2570\u2500",
+          "template": "╰─",
           "type": "text"
         },
         {
@@ -215,7 +215,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\u276f ",
+          "template": "❯ ",
           "type": "status"
         }
       ],
@@ -226,12 +226,12 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "#FEF5ED",
-    "template": "\ue285 "
+    "template": " "
   },
   "secondary_prompt": {
     "background": "transparent",
     "foreground": "",
-    "template": "\u2570\u2500\u276f "
+    "template": "╰─❯ "
   },
   "version": 3
 }
