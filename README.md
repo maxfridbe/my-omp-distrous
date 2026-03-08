@@ -9,6 +9,10 @@ A collection of distribution-specific themes for Oh My Posh, designed to automat
 - **Support for 30+ Distros:** Includes themes for Arch, Fedora, Debian, Ubuntu, Alpine, and many more.
 - **Easy Installation:** Single script to set up themes and update your `.bashrc`.
 
+## Example
+
+![Preview](images/preview.png)
+
 ## Installation
 
 1. Clone this repository:
